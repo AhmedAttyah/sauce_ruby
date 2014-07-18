@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.executables = ['sauce']
   s.default_executable = 'sauce'
   s.require_paths = ["lib"]
-  s.test_files = Dir['spec/**/*.rb']
+  s.test_files = Dir['spec/**/*_spec.rb']
 
   s.add_development_dependency("rspec", ["~> 2.14.0"])
   s.add_development_dependency("simplecov")
