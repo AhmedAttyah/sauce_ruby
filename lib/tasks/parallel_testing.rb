@@ -126,6 +126,7 @@ def parse_task_args(test_tool=:rspec, args)
   test_options = args[:test_options] || env_args[:test_options] || default[:test_options]
   parallel_options = args[:parallel_options] || env_args[:parallel_options]
   files = args[:files] || env_args[:files] || default[:files]
+  files = files.split(' ')
 
   return_args = [
     '-n', concurrency.to_s,
