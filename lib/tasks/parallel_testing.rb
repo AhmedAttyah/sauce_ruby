@@ -119,7 +119,7 @@ def parse_task_args(test_tool=:rspec, args)
     :features => ENV['features'],
     :parallel_options => ENV['parallel_test_options'],
     :test_options => ENV['test_options'],
-    :files => ENV['test_files'].split(' ')
+    :files => ENV['test_files']
   }
 
   concurrency = args[:concurrency] || env_args[:concurrency] || default[:concurrency]
@@ -141,7 +141,6 @@ def parse_task_args(test_tool=:rspec, args)
   end
 
   return_args.push *(parallel_options.split(' ')) if parallel_options
-  return_args.push files
-
+  return_args += files.split(' ')
   return return_args
 end
